@@ -79,7 +79,7 @@ class fetcher:
         fdir,fname = os.path.split(url);
         os.chdir(topdir + "/src/");
         try_unlink(fname);
-        stat = shellexec_shell("wget --no-check-certificate --timeout=10 %s"%(url), False);
+        stat = shellexec_shell("wget --no-check-certificate %s"%(url), False);
 
         # store our current version
         self.version = filemd5(fname);
